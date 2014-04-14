@@ -2,9 +2,9 @@ test( "qunit test", function() {
   ok( 1 == "1", "Passed!" );
 });
 
-module("find");
+module("Array.find(criteria)");
 
-test("basic query", function() {
+test("Basic query", function() {
   var arr = [
     {a:1, b:2},
     {a:1, c:3},
@@ -17,7 +17,7 @@ test("basic query", function() {
   ok( r, "Passed! Returned only 2 results.");
 });
 
-test("compound query", function() {
+test("Compound query", function() {
   var arr = [
     {a:1, b:2},
     {a:1, c:3},
@@ -34,7 +34,7 @@ test("compound query", function() {
 });
 
 
-test("nested query", function() {
+test("Nested query", function() {
   var arr = [
     {a: { b:2 }, c: 3 },
     {a:1, c:3},
@@ -49,9 +49,9 @@ test("nested query", function() {
   ok( r, "Passed! Returned only 1 results.");
 });
 
-module("projection");
+module("Array.find(criteria, projection)");
 
-test("nested query with projection", function() {
+test("Nested query with projection", function() {
   var arr = [
     {a: { b:2 }, c: 3 },
     {a:1, c:3},
@@ -69,7 +69,7 @@ test("nested query with projection", function() {
   ok( r, "Passed!");
 });
 
-test("renaming projection", function() {
+test("Renaming projection", function() {
   var arr = [
     {a: { b: 1 }, c: 3 },
     {a: { b: 2 }, c:3},
@@ -86,4 +86,32 @@ test("renaming projection", function() {
 });
 
 
-module("aggregate");
+module("Array.aggregate(pipeline)");
+
+
+test("$match and $project", function() {
+  var arr = [
+    {a: { b: 1 }, c: 3 },
+    {a: { b: 2 }, c:3},
+    {a: 3, b:2}
+    ];
+
+  var results = arr.aggregate([
+    {
+      "$match": {
+        "a.b": 2
+      }
+    },
+    {
+      "$project": {
+        d: "$a.b",
+        c: 1
+      }
+    }
+  ]);
+  var r = results.length === 1 && results[0].d === 2;
+  //console.log(results, results.length, r);
+  ok( r, "Passed!");
+});
+
+module("Array.aggregate(pipeline, options)");

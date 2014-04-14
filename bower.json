@@ -17,9 +17,7 @@
     "tests"
   ],
   "dependencies": {
-    "lodash": "~2.4.1"
   },
   "devDependencies": {
-    "qunit": "~1.14.0"
   }
 }
