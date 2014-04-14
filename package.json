@@ -1,0 +1,28 @@
+{
+  "name": "mungus",
+  "version": "0.0.0",
+  "description": "mungus ======",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Glavin001/mungus.git"
+  },
+  "author": "Glavin Wiechert <glavin.wiechert@gmail.com> (https://github.com/Glavin001)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Glavin001/mungus/issues"
+  },
+  "homepage": "https://github.com/Glavin001/mungus",
+  "dependencies": {
+    "lodash": "^2.4.1"
+  },
+  "devDependencies": {
+    "mocha": "^1.18.2"
+  }
+}

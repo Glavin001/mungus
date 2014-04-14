@@ -1,0 +1,25 @@
+{
+  "name": "mungus",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Glavin001/mungus",
+  "authors": [
+    "Glavin Wiechert <glavin.wiechert@gmail.com>"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lodash": "~2.4.1"
+  },
+  "devDependencies": {
+    "qunit": "~1.14.0"
+  }
+}
